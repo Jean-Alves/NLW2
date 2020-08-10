@@ -1,0 +1,32 @@
+
+-- INICIA Projeto em node
+yarn init -y
+
+--ADICIONA TYPE SCRIPT no node
+yarn add typescript -D
+yarn tsc --init
+
+-- ADICIONA a dependencia, caso tenha alguma alteração no node e ja atualiza, não precisa reiniciar
+yarn add ts-node-dev -D
+
+-- arquivo pakacge.json
+--transpile-only tranascreve para javasrcipt sem verificar erro
+  "scripts": {
+    "start": "tsnd --transpile-only src/server.ts"
+  },
+
+
+-- Ferramenta de terceiro, microframework
+yarn add express
+yarn add @types/express -D
+
+-- banco de dados sqllite
+yarn add knex sqlite3
+  --arquivo pakacge, gera 1 novo script para funcionar TS, por padrao é JS
+    "knex:migrate": "knex --knexfile knexfile.ts migrate:latest",
+    "knex:migrate:rollback": "knex --knexfile knexfile.ts migrate:rollback"
+
+--CORS - permite que aplicações com endereços diferentes acesses a api
+    yarn add cors 
+    yarn add @types/cors -D
+   
